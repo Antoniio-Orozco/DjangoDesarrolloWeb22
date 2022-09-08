@@ -1,14 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>colegio</title>
-</head>
-<body>
-    <h1>Colegio San Jose</h1>
-    <a href="{% url 'home:estudiantesapp' %}">Estudiantes</a>
-    <a href="{% url 'home:administradoresapp' %}">Administradores</a>
-</body>
-</html>
+{% extends 'base.html'%}
+{% block  contenido %}
+{% load static %}
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
+        <div class="row align-items-center px-3">
+          <div class="col-lg-6 text-center text-lg-left">
+            <h1 class="display-3 font-weight-bold text-white">
+              BIENVENIDOS
+            </h1>
+            <p class="text-white mb-4">
+              En la siguiente pagina encontraran <br>
+          toda la informacion relacionada sobre los<br> 
+          alumnos y administradores del Colegio <br>
+          San José.
+            </p>
+            <a href="" class="btn btn-secondary mt-1 py-3 px-5">Learn More</a>
+          </div>
+          <div class="col-lg-6 text-center text-lg-right">
+            <img class="img-fluid mt-5" src="{% static 'img/header.png'%}" alt="" />    
+          </div>
+        </div>
+      </div>
+      <!-- Header End -->
+   
+    {% endblock %}

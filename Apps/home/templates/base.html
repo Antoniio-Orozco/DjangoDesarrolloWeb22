@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon" />
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+  rel="stylesheet"
+/>
+
+<!-- Flaticon Font -->
+<link href="lib/flaticon/font/flaticon.css" rel="stylesheet" />
+
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="{% static 'css/style.css'%}" rel="stylesheet" />
+</head>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/diseños.css'%} ">   
+   <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegio San José</title>
+    <img src="{% static 'img/logo.png'%}" alt="Image" heiht="200" width="200" align=right>
+   
+</head>
+  <body background="{% static 'img/fondo.png'%}">
+    
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Colegio San José</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home:homeapp' %}">INICIO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home:estudiantesapp' %}">ESTUDIANTES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home:administradoresapp' %}">ADMINISTRADORES</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  ACERCA DE
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="ACERCA DE.html">Acerca de</a></li>
+                  <li><a class="dropdown-item" href="#">Ubicacion</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Contacto</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">BUSCAR</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      {% block contenido %}
+        {% endblock %}
+  </body>
+</html>
+ 
