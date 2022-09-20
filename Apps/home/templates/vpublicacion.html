@@ -7,7 +7,7 @@
     class="d-flex flex-column align-items-center justify-content-center"
     style="min-height: 400px"
   >
-    <h3 class="display-3 font-weight-bold text-white">ESTUDIANTE PUBLICA</h3>
+    <h3 class="display-3 font-weight-bold text-white">PUBLICACION</h3>
     <div class="d-inline-flex text-white">
      <!-- <p class="m-0"><a class="text-white" href="Index.html">Home</a></p>--> 
        
@@ -17,8 +17,16 @@
 </div>
 <div  class="container"   id="tablaalumn" >
     
-  <h2> Crear Alumno que Publica </h2>
-  <a href="{% url 'home:CrearEstudiante' %}">Crear </a>
+  <h2> Crear Publicacion </h2>
+ <form method="POST">
+    {% csrf_token %}
+    Numero {{form.numero}}
+    Noticia {{form.noticia}}
+    EstudiantePublica {{form.estudiantepublica}}
+    EstudianteAutoriza {{form.estudianteautoriza}}
+    
+    <input type="submit" name="Guardar">
+ </form>
 </div>
 </div>
 </div>

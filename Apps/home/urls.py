@@ -16,12 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from Apps.home import views
-from .views import HomeView,EstudiantesView,AdministradoresView
-
+from .views import HomeView,EstudiantesView,AdministradoresView,CrearAlumnoPublicaView,CrearAlumnoAutorizaViews,NoticiaViews,PublicacionView,ComentarioView
+from .views import vnoticiasView,vpublicacionView,vcomentarioView
 app_name='home'
 
 urlpatterns = [
       path('', HomeView.as_view(), name='homeapp'),
       path('estudiantes/', EstudiantesView.as_view(), name='estudiantesapp'),
-      path('administradores/', AdministradoresView.as_view(), name='administradoresapp')
+      path('administradores/', AdministradoresView.as_view(), name='administradoresapp'),
+      path('crearEstudiante/', CrearAlumnoPublicaView.as_view(), name='CrearEstudiante'),
+      path('crearEstudiantePublica/', CrearAlumnoAutorizaViews.as_view(), name='CrearEstudiantePublica'),
+      path('Noticia/', NoticiaViews.as_view(), name='Noticiaapp'),  
+      path('Publicacion/', PublicacionView.as_view(), name='Publicacionapp'),   
+      path('Comentario/', ComentarioView.as_view(), name='Comentarioapp'),    
+      path('CrearNoticia/', vnoticiasView.as_view(), name='CrearNoticia'),   
+      path('CrearPublicacion/', vpublicacionView.as_view(), name='CrearPublicacion'),  
+      path('CrearComentario/', vcomentarioView.as_view(), name='CrearComentario'),    
+
 ]   

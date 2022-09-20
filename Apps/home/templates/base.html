@@ -52,25 +52,27 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home:homeapp' %}">INICIO</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'home:homeapp' %}">HOME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'home:estudiantesapp' %}">ESTUDIANTES</a>
+                <a class="nav-link" href="{% url 'home:estudiantesapp' %}">ESTUDIANTE PUBLICA</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'home:administradoresapp' %}">ADMINISTRADORES</a>
+                <a class="nav-link" href="{% url 'home:administradoresapp' %}">ESTUDIANTE AUTORIZA</a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  ACERCA DE
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="ACERCA DE.html">Acerca de</a></li>
-                  <li><a class="dropdown-item" href="#">Ubicacion</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Contacto</a></li>
-                </ul>
+
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home:Noticiaapp' %}">NOTICIAS</a>
               </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home:Publicacionapp' %}">PUBLICACION</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home:Comentarioapp' %}">COMENTARIO</a>
+              </li>
+
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
