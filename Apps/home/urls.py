@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from Apps.home import views
 from .views import HomeView,EstudiantesView,AdministradoresView,CrearAlumnoPublicaView,CrearAlumnoAutorizaViews,NoticiaViews,PublicacionView,ComentarioView
-from .views import vnoticiasView,vpublicacionView,vcomentarioView
+from .views import vnoticiasView,vpublicacionView,vcomentarioView,RegistroView,LoginView
 app_name='home'
 
 urlpatterns = [
@@ -31,6 +31,8 @@ urlpatterns = [
       path('Comentario/', ComentarioView.as_view(), name='Comentarioapp'),    
       path('CrearNoticia/', vnoticiasView.as_view(), name='CrearNoticia'),   
       path('CrearPublicacion/', vpublicacionView.as_view(), name='CrearPublicacion'),  
-      path('CrearComentario/', vcomentarioView.as_view(), name='CrearComentario'),    
+      path('CrearComentario/', vcomentarioView.as_view(), name='CrearComentario'),  
+       path('registro/', RegistroView.as_view(), name='Registro'), 
+       path('login/', LoginView.as_view(), name='login'),     
 
 ]   

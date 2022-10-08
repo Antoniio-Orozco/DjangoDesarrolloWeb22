@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView
-from .forms import AlumnoPublicaForm
+from .forms import AlumnoPublicaForm, RegistroForm
 from .forms import AlumnoAutorizaForm
 from .forms import ComentarioForm
 from .forms import NoticiaForm
 from .forms import PublicacionForm
+from .models import Usuario
+from django.contrib.auth.views import LoginView
 
 from django.urls import reverse_lazy
 # Create your views here.
@@ -51,6 +53,15 @@ class vcomentarioView(CreateView):
      template_name= 'vcomentario.html'
      form_class = ComentarioForm
      success_url = reverse_lazy('home:homeapp')     
+
+class RegistroView(CreateView):
+     model = Usuario
+     form_class = RegistroForm
+     success_url = reverse_lazy('home:homeapp')    
+
+class LoginView(LoginView):
+     template_name = 'login.html'
+    
 
 
 
