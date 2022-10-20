@@ -18,6 +18,7 @@ from django.urls import path,include
 from Apps.home import views
 from .views import HomeView,EstudiantesView,AdministradoresView,CrearAlumnoPublicaView,CrearAlumnoAutorizaViews,NoticiaViews,PublicacionView,ComentarioView
 from .views import vnoticiasView,vpublicacionView,vcomentarioView,RegistroView,LoginView
+from .views import ListarEstudianteView,ListarEstudianteAutorizaView,ListarNoticiaView,ListarPublicacionView
 app_name='home'
 
 urlpatterns = [
@@ -34,5 +35,9 @@ urlpatterns = [
       path('CrearComentario/', vcomentarioView.as_view(), name='CrearComentario'),  
        path('registro/', RegistroView.as_view(), name='Registro'), 
        path('login/', LoginView.as_view(), name='login'),     
+            path('listado_estudiante/', ListarEstudianteView.as_view(), name='listadoest'), 
+            path('listado_estudianteAutoriza/', ListarEstudianteAutorizaView.as_view(), name='listadoestAuto'),    
+            path('listado_noticia/', ListarNoticiaView.as_view(), name='listadonoticia'),    
+            path('listado_publicacion/', ListarPublicacionView.as_view(), name='listadopublicacion'),    
 
 ]   
