@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% block  contenido %}
+{% load static %}
+<!-- Header Start -->
+<div class="container-fluid bg-primary mb-5">
+  <div
+    class="d-flex flex-column align-items-center justify-content-center"
+    style="min-height: 400px"
+  >
+     
+    <div class="d-inline-flex text-white">
+     <!-- <p class="m-0"><a class="text-white" href="Index.html">Home</a></p>--> 
+       
+<div class="container" id="tablaalumn">
+    <div class="row">
+        <div class="col">
+            <table class="table table-success table-striped">
+                <td><strong>NUMERO</strong></td>
+                <td><strong>NOTICIA</strong></td>
+                <td><strong>ESTUDIANTE PUBLICA</strong></td>
+                <td><strong>ESTUDIANTE AUTORIZA</strong></td>
+                <td><strong>CREACION</strong></td>
+
+                </tr>
+                 
+                <tr>
+                    <td>
+                        {{ object.numero }}
+                    </td>
+                    <td>
+                        {{ object.noticia }}
+                    </td>
+                    <td>
+                        {{ object.estudiantepublica }}
+                    </td>
+                    <td>
+                        {{ object.estudianteautoriza }}
+                    </td>
+
+                    <td>
+                        {{ object.creacion }}
+                    </td>
+
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+    
+
+{% endblock %}
+       

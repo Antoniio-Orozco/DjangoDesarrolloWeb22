@@ -4,7 +4,7 @@
 <!-- Header Start -->
 <div class="container-fluid bg-primary mb-5">
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-        <h3 class="display-3 font-weight-bold text-white">Listado de Publicaciones</h3>
+        <h3 class="display-3 font-weight-bold text-white">Listado de Comentarios</h3>
         <div class="d-inline-flex text-white">
             <!-- <p class="m-0"><a class="text-white" href="Index.html">Home</a></p>-->
 
@@ -18,38 +18,38 @@
         <div class="col">
             <table class="table table-success table-striped">
                 <center>
-                    <form action="" method="GET">
-                        <input type="text" name="noticia" value="{{request.GET.noticia}}">
-                        <button type="submit">BUSCAR</button>
-                    </center>
-                <td><strong>NOMBRE</strong></td>
+             <form action="" method="GET">
+                <input type="text" name="noticia" value="{{request.GET.noticia}}">
+                <button type="submit">BUSCAR</button>
+            </center>
+             </form>   
+                <td><strong>NOTICIA</strong></td>
                 <td><strong>DESCRIPCION</strong></td>
+                <td><strong>ESTUDIANTE PUBLICA</strong></td>
                 <td><strong>Acciones</strong></td>
 
                 </tr>
                 {% for est in object_list %}
                 <tr>
                     <td>
-                        {{ est.numero }}
-                    </td>
-                    <td>
                         {{ est.noticia }}
                     </td>
-
+                    <td>
+                        {{ est.descripcion }}
+                    </td>
                     <td>
                         {{ est.estudiantepublica }}
                     </td>
                     <td>
-                        <a href="{% url 'home:editarPublicacion' est.id %}"class="btn btn-warning">Editar </a>
-                        <a href="{% url 'home:publicacionDet' est.id %}"class="btn btn-warning">Ver </a>
+                        <a href="{% url 'home:editarComentario' est.id %}"class="btn btn-warning">Editar </a>
+                        <a href="{% url 'home:comentarioDet' est.id %}"class="btn btn-warning">Ver </a>
                     </td>
-                </td>
                 </tr>
     
                 {% endfor %}
             </table>
                 <center>
-            <button type="button" class="btn btn-warning"><a href="{% url 'home:Publicacionapp' %}">Regresar </a></button>
+            <button type="button" class="btn btn-warning"><a href="{% url 'home:Comentarioapp' %}">Regresar </a></button>
         </center>   
         </div>
 

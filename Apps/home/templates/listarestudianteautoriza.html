@@ -17,8 +17,14 @@
     <div class="row">
         <div class="col">
             <table class="table table-success table-striped">
+                <center>
+                    <form action="" method="GET">
+                        <input type="text" name="nombre" value="{{request.GET.nombre}}">
+                        <button type="submit">BUSCAR</button>
+                    </center>
                 <td><strong>NOMBRE</strong></td>
                 <td><strong>APELLIDO</strong></td>
+                <td><strong>Acciones</strong></td>
 
                 </tr>
                 {% for est in object_list %}
@@ -28,6 +34,10 @@
                     </td>
                     <td>
                         {{ est.apellido }}
+                    </td>
+                    <td>
+                        <a href="{% url 'home:editarestAuto' est.id %}"class="btn btn-warning">Editar </a>
+                        <a href="{% url 'home:estudianteAutoDet' est.id %}"class="btn btn-warning">Ver </a>
                     </td>
                 </tr>
     

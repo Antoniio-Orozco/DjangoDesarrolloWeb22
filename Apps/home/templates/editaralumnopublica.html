@@ -7,7 +7,7 @@
     class="d-flex flex-column align-items-center justify-content-center"
     style="min-height: 400px"
   >
-    <h3 class="display-3 font-weight-bold text-white">COMENTARIO</h3>
+    <h3 class="display-3 font-weight-bold text-white">ESTUDIANTES</h3>
     <div class="d-inline-flex text-white">
      <!-- <p class="m-0"><a class="text-white" href="Index.html">Home</a></p>--> 
        
@@ -16,14 +16,16 @@
   </div>
 </div>
 <div  class="container"   id="tablaalumn" >
-    
-  <center>
-    <h2> Crear Comentario </h2>
-    <button type="button" class="btn btn-warning"><a href="{% url 'home:CrearComentario' %}">Crear  </a></button>
-    <button type="button" class="btn btn-warning"><a href="{% url 'home:listadocomentario' %}">Listar Comentarios </a></button>
-     
-  </center>
-  
+    <center>
+  <h2> Editar Alumno que Publica </h2>
+ <form method="POST">
+    {% csrf_token %}
+    Nombre {{form.nombre}}
+    Apellido {{form.apellido}}
+    Carné {{form.Carne}}
+    <input type="submit" name="Guardar">
+ </form>
+</center>
 </div>
 </div>
 </div>

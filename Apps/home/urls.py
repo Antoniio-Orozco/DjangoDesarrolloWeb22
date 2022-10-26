@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from Apps.home import views
+from Apps.home import views     
 from .views import HomeView,EstudiantesView,AdministradoresView,CrearAlumnoPublicaView,CrearAlumnoAutorizaViews,NoticiaViews,PublicacionView,ComentarioView
 from .views import vnoticiasView,vpublicacionView,vcomentarioView,RegistroView,LoginView
-from .views import ListarEstudianteView,ListarEstudianteAutorizaView,ListarNoticiaView,ListarPublicacionView
+from .views import ListarEstudianteView,ListarEstudianteAutorizaView,ListarNoticiaView,ListarPublicacionView,ListarComentarioView,EditarAlumnoPublicaView,EditarAlumnoAutorizaViews
+from .views import EditarnoticiasView,EditarpublicacionView,EditarcomentarioView,EstudianteDetailView,EstudianteAutorizaDetailView
+from .views import NoticiasDetailView,PublicacionDetailView,ComentarioDetailView
 app_name='home'
 
 urlpatterns = [
@@ -35,9 +37,19 @@ urlpatterns = [
       path('CrearComentario/', vcomentarioView.as_view(), name='CrearComentario'),  
        path('registro/', RegistroView.as_view(), name='Registro'), 
        path('login/', LoginView.as_view(), name='login'),     
-            path('listado_estudiante/', ListarEstudianteView.as_view(), name='listadoest'), 
-            path('listado_estudianteAutoriza/', ListarEstudianteAutorizaView.as_view(), name='listadoestAuto'),    
-            path('listado_noticia/', ListarNoticiaView.as_view(), name='listadonoticia'),    
-            path('listado_publicacion/', ListarPublicacionView.as_view(), name='listadopublicacion'),    
-
-]   
+        path('listado_estudiante/', ListarEstudianteView.as_view(), name='listadoest'), 
+        path('listado_estudianteAutoriza/', ListarEstudianteAutorizaView.as_view(), name='listadoestAuto'),    
+        path('listado_noticia/', ListarNoticiaView.as_view(), name='listadonoticia'),    
+        path('listado_publicacion/', ListarPublicacionView.as_view(), name='listadopublicacion'),   
+        path('listado_comentario/', ListarComentarioView.as_view(), name='listadocomentario'), 
+         path('editar_estudiante/<int:pk>', EditarAlumnoPublicaView.as_view(), name='editarest'),  
+         path('editar_estudianteAutoriza/<int:pk>', EditarAlumnoAutorizaViews.as_view(), name='editarestAuto'),  
+         path('editar_noticia/<int:pk>', EditarnoticiasView.as_view(), name='editarNoticia'),  
+         path('editar_publicacion/<int:pk>', EditarpublicacionView.as_view(), name='editarPublicacion'),  
+         path('editar_comentario/<int:pk>', EditarcomentarioView.as_view(), name='editarComentario'),  
+           path('Estudiante_Detail/<int:pk>', EstudianteDetailView.as_view(), name='estudianteDet'),  
+           path('EstudianteAutoriza_Detail/<int:pk>', EstudianteAutorizaDetailView.as_view(), name='estudianteAutoDet'),  
+           path('Noticia_Detail/<int:pk>', NoticiasDetailView.as_view(), name='noticiaDet'),
+           path('Publicacion_Detail/<int:pk>', PublicacionDetailView.as_view(), name='publicacionDet'),
+           path('Comentario_Detail/<int:pk>', ComentarioDetailView.as_view(), name='comentarioDet'),
+]          
